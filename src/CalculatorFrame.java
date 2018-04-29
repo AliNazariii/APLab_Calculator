@@ -1,6 +1,8 @@
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 public class CalculatorFrame
 {
@@ -24,6 +26,32 @@ public class CalculatorFrame
 
         panel.add(scrollPane, BorderLayout.NORTH);
         panel.add(tabs, BorderLayout.SOUTH);
+
+        textArea.addKeyListener(new KeyListener()
+        {
+            @Override
+            public void keyTyped(KeyEvent e)
+            {
+                System.out.println("Typed" + e);
+                //textArea.setFocusable(true);
+                //textArea.setText(textArea.getText() + keyEvent.getKeyChar());
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e)
+            {
+                System.out.println("Pressed" + e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e)
+            {
+                System.out.println("Released" + e);
+            }
+        });
+        tabs.setFocusable(false);
+        panel.setFocusable(false);
+        calculator.setFocusable(false);
 
         calculator.setContentPane(panel);
         calculator.setVisible(true);
@@ -69,91 +97,91 @@ public class CalculatorFrame
 
     public void createNumbers(JPanel numbers)
     {
-        JButton zero = new JButton("0");
+        KeyBoardButton zero = new KeyBoardButton("0");
         numbers.add(zero);
-        JButton one = new JButton("1");
+        KeyBoardButton one = new KeyBoardButton("1");
         numbers.add(one);
-        JButton two = new JButton("2");
+        KeyBoardButton two = new KeyBoardButton("2");
         numbers.add(two);
-        JButton three = new JButton("3");
+        KeyBoardButton three = new KeyBoardButton("3");
         numbers.add(three);
-        JButton four = new JButton("4");
+        KeyBoardButton four = new KeyBoardButton("4");
         numbers.add(four);
-        JButton five = new JButton("5");
+        KeyBoardButton five = new KeyBoardButton("5");
         numbers.add(five);
-        JButton six = new JButton("6");
+        KeyBoardButton six = new KeyBoardButton("6");
         numbers.add(six);
-        JButton seven = new JButton("7");
+        KeyBoardButton seven = new KeyBoardButton("7");
         numbers.add(seven);
-        JButton eight = new JButton("8");
+        KeyBoardButton eight = new KeyBoardButton("8");
         numbers.add(eight);
-        JButton nine = new JButton("9");
+        KeyBoardButton nine = new KeyBoardButton("9");
         numbers.add(nine);
     }
 
     public void createMainButtons(JPanel mains)
     {
-        JButton add = new JButton("+");
+        KeyBoardButton add = new KeyBoardButton("+");
         mains.add(add);
 
-        JButton subtract = new JButton("-");
+        KeyBoardButton subtract = new KeyBoardButton("-");
         mains.add(subtract);
 
-        JButton multiplication = new JButton("*");
+        KeyBoardButton multiplication = new KeyBoardButton("*");
         mains.add(multiplication);
 
-        JButton clear = new JButton("C");
+        KeyBoardButton clear = new KeyBoardButton("C");
         mains.add(clear);
 
-        JButton division = new JButton("/");
+        KeyBoardButton division = new KeyBoardButton("/");
         mains.add(division);
 
-        JButton dot = new JButton(".");
+        KeyBoardButton dot = new KeyBoardButton(".");
         mains.add(dot);
 
-        JButton percent = new JButton("%");
+        KeyBoardButton percent = new KeyBoardButton("%");
         mains.add(percent);
 
-        JButton equal = new JButton("=");
+        KeyBoardButton equal = new KeyBoardButton("=");
         mains.add(equal);
     }
 
     public void createScientificButtons(JPanel science)
     {
-        JButton pow = new JButton("POW");
+        KeyBoardButton pow = new KeyBoardButton("POW");
         science.add(pow);
 
-        JButton sin = new JButton("SIN");
+        KeyBoardButton sin = new KeyBoardButton("SIN");
         science.add(sin);
 
-        JButton cos = new JButton("COS");
+        KeyBoardButton cos = new KeyBoardButton("COS");
         science.add(cos);
 
-        JButton exp = new JButton("exp");
+        KeyBoardButton exp = new KeyBoardButton("exp");
         science.add(exp);
 
-        JButton integral = new JButton("int");
+        KeyBoardButton integral = new KeyBoardButton("int");
         science.add(integral);
 
-        JButton pi = new JButton("PI");
+        KeyBoardButton pi = new KeyBoardButton("PI");
         science.add(pi);
 
-        JButton shift = new JButton("SHIFT");
+        KeyBoardButton shift = new KeyBoardButton("SHIFT");
         science.add(shift);
 
-        JButton tan = new JButton("TAN");
+        KeyBoardButton tan = new KeyBoardButton("TAN");
         science.add(tan);
 
-        JButton cot = new JButton("COT");
+        KeyBoardButton cot = new KeyBoardButton("COT");
         science.add(cot);
 
-        JButton log = new JButton("LOG");
+        KeyBoardButton log = new KeyBoardButton("LOG");
         science.add(log);
 
-        JButton drr = new JButton("DRR");
+        KeyBoardButton drr = new KeyBoardButton("DRR");
         science.add(drr);
 
-        JButton e = new JButton("e");
+        KeyBoardButton e = new KeyBoardButton("e");
         science.add(e);
     }
 }

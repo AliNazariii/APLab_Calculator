@@ -7,8 +7,7 @@ import java.awt.event.MouseEvent;
 
 public class CalculatorFrame extends JFrame
 {
-    private JTextArea textArea;
-    private JScrollPane scrollPane;
+    private JTextField textField;
     private JTabbedPane tabs;
 
     private JPanel panelA;
@@ -66,14 +65,11 @@ public class CalculatorFrame extends JFrame
         setSize(350, 500);
         setLocationRelativeTo(null); //put the frame in the center of the screen
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //what will happen if we click on the close icon
-        setLayout(new GridLayout(2, 1));
+        setLayout(new BorderLayout());
 
-        textArea = new JTextArea();
-        textArea.requestFocus();
-        textArea.addKeyListener(new KeyHandler());
-        scrollPane = new JScrollPane(textArea,
-                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS,
-                JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        textField = new JTextField();
+        textField.requestFocus();
+        textField.addKeyListener(new KeyHandler());
 
         tabs = new JTabbedPane();
 
@@ -85,8 +81,8 @@ public class CalculatorFrame extends JFrame
         setScientificPanel();
         tabs.addTab("Scientific Mode", panelB);
 
-        add(scrollPane);
-        add(tabs);
+        add(textField, BorderLayout.NORTH);
+        add(tabs, BorderLayout.CENTER);
 
         showFrame();
     }
@@ -334,6 +330,69 @@ public class CalculatorFrame extends JFrame
         panelB.add(equalB);
     }
 
+    public void arithmetic(String text)
+    {
+        text = text.replaceAll(" ", "");
+        double a;
+        double b;
+        double result;
+        if (text.contains("+"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('+')));
+            System.out.println(a);
+            b = Double.parseDouble(text.substring(text.indexOf('+') + 1, text.length()));
+            System.out.println(b);
+            result = a + b;
+            textField.setText(textField.getText() + " = " + result);
+        }
+        else if (text.contains("%"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('%')));
+            b = Double.parseDouble(text.substring(text.indexOf('%') + 1, text.length()));
+            result = (a * b / 100);
+            textField.setText(textField.getText() + " = " + result);
+        }
+        else if (text.contains("-"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('-')));
+            b = Double.parseDouble(text.substring(text.indexOf('-') + 1, text.length()));
+            result = a - b;
+            textField.setText(textField.getText() + " = " + result);
+        }
+        else if (text.contains("*"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('*')));
+            b = Double.parseDouble(text.substring(text.indexOf('*') + 1, text.length()));
+            result = a * b;
+            textField.setText(textField.getText() + " = " + result);
+        }
+        else if (text.contains("/"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('/')));
+            b = Double.parseDouble(text.substring(text.indexOf('/') + 1, text.length()));
+            if (b != 0)
+            {
+                result = a / b;
+                textField.setText(textField.getText() + " = " + result);
+            }
+            else
+            {
+                textField.setText("");
+            }
+        }
+        else if (text.contains("^"))
+        {
+            a = Double.parseDouble(text.substring(0, text.indexOf('^')));
+            b = Double.parseDouble(text.substring(text.indexOf('^') + 1, text.length()));
+            result = Math.pow(a, b);
+            textField.setText(textField.getText() + " = " + result);
+        }
+        else
+        {
+            textField.setText("");
+        }
+    }
+
     public void showFrame()
     {
         revalidate();
@@ -347,83 +406,83 @@ public class CalculatorFrame extends JFrame
         {
             if (e.getSource().equals(clearA) || e.getSource().equals(clearB))
             {
-                textArea.setText("");
+                textField.setText("");
             }
             else if (e.getSource().equals(backA) || e.getSource().equals(backB))
             {
-                textArea.setText(textArea.getText().substring(0, textArea.getText().length() - 1));
+                textField.setText(textField.getText().substring(0, textField.getText().length() - 1));
             }
             else if (e.getSource().equals(percentA) || e.getSource().equals(percentB))
             {
-                textArea.setText(textArea.getText() + "%");
+                textField.setText(textField.getText() + "%");
             }
             else if (e.getSource().equals(divisionA) || e.getSource().equals(divisionB))
             {
-                textArea.setText(textArea.getText() + "/");
+                textField.setText(textField.getText() + "/");
             }
             else if (e.getSource().equals(multiplicationA) || e.getSource().equals(multiplicationB))
             {
-                textArea.setText(textArea.getText() + "*");
+                textField.setText(textField.getText() + "*");
             }
             else if (e.getSource().equals(subtractA) || e.getSource().equals(subtractB))
             {
-                textArea.setText(textArea.getText() + "-");
+                textField.setText(textField.getText() + "-");
             }
             else if (e.getSource().equals(addA) || e.getSource().equals(addB))
             {
-                textArea.setText(textArea.getText() + "+");
+                textField.setText(textField.getText() + "+");
             }
             else if (e.getSource().equals(equalA) || e.getSource().equals(equalB))
             {
-                textArea.setText(textArea.getText() + "=");
+                arithmetic(textField.getText());
             }
             else if (e.getSource().equals(oneA) || e.getSource().equals(oneB))
             {
-                textArea.setText(textArea.getText() + "1");
+                textField.setText(textField.getText() + "1");
             }
             else if (e.getSource().equals(twoA) || e.getSource().equals(twoB))
             {
-                textArea.setText(textArea.getText() + "2");
+                textField.setText(textField.getText() + "2");
             }
             else if (e.getSource().equals(threeA) || e.getSource().equals(threeB))
             {
-                textArea.setText(textArea.getText() + "3");
+                textField.setText(textField.getText() + "3");
             }
             else if (e.getSource().equals(fourA) || e.getSource().equals(fourB))
             {
-                textArea.setText(textArea.getText() + "4");
+                textField.setText(textField.getText() + "4");
             }
             else if (e.getSource().equals(fiveA) || e.getSource().equals(fiveB))
             {
-                textArea.setText(textArea.getText() + "5");
+                textField.setText(textField.getText() + "5");
             }
             else if (e.getSource().equals(sixA) || e.getSource().equals(sixB))
             {
-                textArea.setText(textArea.getText() + "6");
+                textField.setText(textField.getText() + "6");
             }
             else if (e.getSource().equals(sevenA) || e.getSource().equals(sevenB))
             {
-                textArea.setText(textArea.getText() + "7");
+                textField.setText(textField.getText() + "7");
             }
             else if (e.getSource().equals(eightA) || e.getSource().equals(eightB))
             {
-                textArea.setText(textArea.getText() + "8");
+                textField.setText(textField.getText() + "8");
             }
             else if (e.getSource().equals(nineA) || e.getSource().equals(nineB))
             {
-                textArea.setText(textArea.getText() + "9");
+                textField.setText(textField.getText() + "9");
             }
             else if (e.getSource().equals(zeroA) || e.getSource().equals(zeroB))
             {
-                textArea.setText(textArea.getText() + "0");
+                textField.setText(textField.getText() + "0");
             }
             else if (e.getSource().equals(zeroDA) || e.getSource().equals(zeroDB))
             {
-                textArea.setText(textArea.getText() + "00");
+                textField.setText(textField.getText() + "00");
             }
             else if (e.getSource().equals(dotA) || e.getSource().equals(dotB))
             {
-                textArea.setText(textArea.getText() + ".");
+                textField.setText(textField.getText() + ".");
             }
             else if (e.getSource().equals(shift))
             {
@@ -448,60 +507,60 @@ public class CalculatorFrame extends JFrame
             {
                 if (sqrt.getText().equals("sqrt"))
                 {
-                    textArea.setText(textArea.getText() + "sqrt");
+                    textField.setText(textField.getText() + "sqrt");
                 }
                 else
                 {
-                    textArea.setText(textArea.getText() + "log");
+                    textField.setText(textField.getText() + "log");
                 }
             }
             else if (e.getSource().equals(sin))
             {
                 if (sin.getText().equals("sin"))
                 {
-                    textArea.setText(textArea.getText() + "sin");
+                    textField.setText(textField.getText() + "sin");
                 }
                 else
                 {
-                    textArea.setText(textArea.getText() + "tan");
+                    textField.setText(textField.getText() + "tan");
                 }
             }
             else if (e.getSource().equals(cos))
             {
                 if (cos.getText().equals("cos"))
                 {
-                    textArea.setText(textArea.getText() + "cos");
+                    textField.setText(textField.getText() + "cos");
                 }
                 else
                 {
-                    textArea.setText(textArea.getText() + "cot");
+                    textField.setText(textField.getText() + "cot");
                 }
             }
             else if (e.getSource().equals(pow))
             {
                 if (pow.getText().equals("POW"))
                 {
-                    textArea.setText(textArea.getText() + "^");
+                    textField.setText(textField.getText() + "^");
                 }
                 else
                 {
-                    textArea.setText(textArea.getText() + "PI");
+                    textField.setText(textField.getText() + "PI");
                 }
             }
             else
             {
                 System.out.println("Hey");
             }
-            textArea.requestFocus();
+            textField.requestFocus();
         }
     }
 
     public class KeyHandler extends KeyAdapter
     {
-        public void keyTyped(KeyEvent e)
+        /*public void keyTyped(KeyEvent e)
         {
 
-        }
+        }*/
         public void keyPressed(KeyEvent e)
         {
             if (e.getKeyCode() == KeyEvent.VK_SHIFT)
@@ -523,14 +582,36 @@ public class CalculatorFrame extends JFrame
                     showFrame();
                 }
             }
-            else if (e.getKeyCode() == (KeyEvent.VK_C & KeyEvent.VK_ALT))
+            else if (e.isAltDown() && (e.getKeyCode() == KeyEvent.VK_C))
             {
-                textArea.setText("");
+                textField.setText("");
+            }
+            else if (e.getKeyCode() == KeyEvent.VK_ENTER)
+            {
+                arithmetic(textField.getText());
             }
         }
         public void keyReleased(KeyEvent e)
         {
-
+            if (e.getKeyCode() == KeyEvent.VK_SHIFT)
+            {
+                if (sqrt.getText().equals("sqrt"))
+                {
+                    sqrt.setText("log");
+                    sin.setText("tan");
+                    cos.setText("cot");
+                    pow.setText("PI");
+                    showFrame();
+                }
+                else
+                {
+                    sqrt.setText("sqrt");
+                    sin.setText("sin");
+                    cos.setText("cos");
+                    pow.setText("POW");
+                    showFrame();
+                }
+            }
         }
     }
 }

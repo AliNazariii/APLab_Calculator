@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0998162a-fd45-47c5-806d-f4f6a9fd5102" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/src/CalculatorFrame.java" afterPath="$PROJECT_DIR$/src/CalculatorFrame.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -29,12 +27,16 @@
       <file leaf-file-name="CalculatorFrame.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/CalculatorFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="326">
-              <caret line="527" column="13" lean-forward="false" selection-start-line="527" selection-start-column="13" selection-end-line="527" selection-end-column="13" />
+            <state relative-caret-position="348">
+              <caret line="395" column="27" lean-forward="true" selection-start-line="395" selection-start-column="27" selection-end-line="395" selection-end-column="27" />
               <folding>
+                <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
                 <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
                 <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
                 <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+                <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+                <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+                <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -247,7 +249,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="23367000" />
+    <option name="totallyTimeSpent" value="26484000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
@@ -262,7 +264,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917318" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -328,9 +330,13 @@
         <state relative-caret-position="2652">
           <caret line="156" column="48" lean-forward="false" selection-start-line="156" selection-start-column="48" selection-end-line="156" selection-end-column="48" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -396,9 +402,13 @@
         <state relative-caret-position="493">
           <caret line="29" column="13" lean-forward="true" selection-start-line="29" selection-start-column="13" selection-end-line="29" selection-end-column="13" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -416,9 +426,13 @@
         <state relative-caret-position="238">
           <caret line="16" column="54" lean-forward="false" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -436,9 +450,13 @@
         <state relative-caret-position="272">
           <caret line="16" column="54" lean-forward="true" selection-start-line="16" selection-start-column="54" selection-end-line="16" selection-end-column="54" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -483,9 +501,13 @@
         <state relative-caret-position="187">
           <caret line="34" column="34" lean-forward="true" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -540,12 +562,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/CalculatorFrame.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="527" column="13" lean-forward="false" selection-start-line="527" selection-start-column="13" selection-end-line="527" selection-end-column="13" />
+        <state relative-caret-position="348">
+          <caret line="395" column="27" lean-forward="true" selection-start-line="395" selection-start-column="27" selection-end-line="395" selection-end-column="27" />
           <folding>
+            <element signature="method#CalculatorFrame#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setSimplePanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#setScientificPanel#0;class#CalculatorFrame#0" expanded="false" />
             <element signature="method#showFrame#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#MouseHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#KeyHandler#0;class#CalculatorFrame#0" expanded="false" />
           </folding>
         </state>
       </provider>
